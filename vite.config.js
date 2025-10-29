@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
+  // Base URL for GitHub Pages (change to '/' for root domain)
+  base: '/bearshop/',
+
   // Development server configuration
   server: {
     port: 3000,
