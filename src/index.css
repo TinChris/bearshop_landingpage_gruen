@@ -1,0 +1,305 @@
+/* Tailwind Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Jelly Design System - Bearshop */
+/* Custom Base Styles */
+@layer base {
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-candyWhite text-nightBlue antialiased overflow-x-hidden;
+    line-height: 1.5;
+    max-width: 100vw;
+  }
+
+  /* Typografie - Jelly Design System */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply font-sans text-base md:text-lg;
+    line-height: 1.5;
+  }
+
+  /* Focus styles für Accessibility - Jelly Style */
+  *:focus-visible {
+    @apply outline-2 outline-offset-4 outline-gummyOrange;
+  }
+
+  /* Button Sentence Case - alle Buttons verwenden normale Groß-/Kleinschreibung */
+  button {
+    text-transform: none;
+  }
+}
+
+/* Jelly Design System - Komponenten */
+@layer components {
+  /* Button Styles - Jelly Effekt */
+  .btn-jelly {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 ease-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed shadow-lg;
+  }
+
+  .btn-jelly:hover {
+    transform: scale(1.05);
+  }
+
+  .btn-jelly:active {
+    transform: scale(0.95);
+  }
+
+  .btn-primary {
+    @apply bg-gummyRed text-white hover:bg-gummyOrange shadow-lg hover:shadow-2xl;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm;
+  }
+
+  .btn-cta {
+    @apply bg-gradient-to-r from-gummyRed to-gummyOrange text-white font-semibold shadow-xl hover:shadow-2xl;
+  }
+
+  /* Input Styles - Jelly Design */
+  .input-jelly {
+    @apply w-full px-6 py-4 rounded-2xl border-2 border-gummyBlue/20 bg-white focus:border-gummyBlue focus:ring-4 focus:ring-gummyBlue/20 transition-all duration-300 outline-none;
+  }
+
+  .input-error {
+    @apply border-gummyRed focus:border-gummyRed focus:ring-gummyRed/20;
+  }
+
+  /* Textarea Styles */
+  .textarea-jelly {
+    @apply input-jelly resize-none min-h-[150px];
+  }
+
+  /* Select/Dropdown Styles */
+  .select-jelly {
+    @apply input-jelly appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234D96FF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  /* Card Styles - Glassmorphism */
+  .card-glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl shadow-xl p-8 transition-all duration-500;
+  }
+
+  .card-glass:hover {
+    @apply shadow-2xl transform -translate-y-2;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Gradient Background - Jelly Style */
+    .bg-jelly-gradient {
+    background: linear-gradient(135deg, #FF4B5C 0%, #FFD93D 25%, #6BCB77 50%, #4D96FF 75%, #9B59B6 100%);
+  }
+
+
+  .bg-jelly-gradient-soft {
+    background: linear-gradient(135deg, rgba(255, 75, 92, 0.1) 0%, rgba(255, 217, 61, 0.1) 50%, rgba(107, 203, 119, 0.1) 100%);
+  }
+  .bg-hero-solid {
+  background-color: #0B1E2D; /* Dunkles Navy – wirkt edel und kontrastreich */
+}
+
+.bg-hero-soft {
+  background: linear-gradient(180deg, #0B1E2D 0%, #10293D 100%);
+}
+
+}
+
+/* Jelly Design System - Utility Classes */
+@layer utilities {
+  /* Text Gradient - Jelly Colors */
+  .text-gradient-jelly {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gummyRed via-gummyYellow to-gummyGreen;
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gummyRed to-gummyOrange;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-red {
+    @apply bg-gradient-to-r from-gummyRed to-gummyOrange;
+  }
+
+  .bg-gradient-blue {
+    @apply bg-gradient-to-r from-gummyBlue to-gummyPurple;
+  }
+
+  .bg-gradient-green {
+    @apply bg-gradient-to-r from-gummyGreen to-gummyBlue;
+  }
+
+  /* Animation delays für staggered animations */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+
+  /* Glassmorphism Variants */
+  .glass-strong {
+    @apply bg-white/90 backdrop-blur-xl border border-white/50;
+  }
+
+  .glass-medium {
+    @apply bg-white/60 backdrop-blur-lg border border-white/30;
+  }
+
+  .glass-light {
+    @apply bg-white/30 backdrop-blur-md border border-white/20;
+  }
+}
+
+/* Custom Scrollbar - Jelly Style */
+@layer utilities {
+  .scrollbar-jelly::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar-jelly::-webkit-scrollbar-track {
+    @apply bg-candyWhite rounded-full;
+  }
+
+  .scrollbar-jelly::-webkit-scrollbar-thumb {
+    @apply bg-gummyOrange/50 rounded-full hover:bg-gummyOrange;
+  }
+}
+
+/* Loading Spinner Animation - Jelly Colors */
+.spinner-jelly {
+  @apply inline-block w-6 h-6 border-4 border-gummyBlue border-t-transparent rounded-full;
+  animation: spin 0.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success Checkmark Animation */
+.checkmark {
+  @apply inline-block w-12 h-12 border-4 border-gummyGreen rounded-full;
+  animation: checkmark-bounce 0.6s ease-out;
+}
+
+@keyframes checkmark-bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Floating Shapes Animation für Hero Background */
+.floating-shape {
+  @apply absolute rounded-full opacity-20;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-shape:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.floating-shape:nth-child(3) {
+  animation-delay: 4s;
+}
+
+/* Logo Ticker Infinite Scroll */
+.logo-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.logo-scroll-reverse {
+  animation: scroll-reverse 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Smooth Transitions für alle interaktiven Elemente */
+a, button, input, select, textarea {
+  @apply transition-all duration-300;
+}
+
+/* Image Hover Effekt */
+img {
+  @apply transition-transform duration-500;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Dark Mode Support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Wird später bei Bedarf aktiviert */
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+}

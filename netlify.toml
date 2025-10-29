@@ -1,0 +1,42 @@
+# Netlify Configuration
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Build command
+  command = "npm run build"
+
+  # Publish directory
+  publish = "dist"
+
+  # Serverless functions directory
+  functions = "api"
+
+# Redirect API calls to serverless functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback - redirect all other routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and CORS
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+# Optional: Set environment context
+[context.production.environment]
+  VITE_USE_PHP = "false"
+
+[context.deploy-preview.environment]
+  VITE_USE_PHP = "false"
+
+[context.branch-deploy.environment]
+  VITE_USE_PHP = "false"
