@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
 
   // Base URL for GitHub Pages (change to '/' for root domain)
-  base: '/bearshop/',
+  base: '/bearshop_landingpage/',
 
   // Development server configuration
   server: {
