@@ -1,0 +1,29 @@
+# robots.txt für Bearshop
+# https://bearshop.at/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bearshop.at/sitemap.xml
+
+# Disallow admin/backend areas (falls vorhanden)
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay (optional, falls Server überlastet wird)
+# Crawl-delay: 10
