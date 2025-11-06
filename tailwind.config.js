@@ -6,16 +6,22 @@ export default {
   ],
   theme: {
     extend: {
-      // Jelly Design System - Gummibärchen Farbpalette
+      // Bearshop Farbpalette - Grün, Blau, Schwarz & Weiß
       colors: {
-        gummyRed: '#FF4B5C',      // Primäre CTA
-        gummyOrange: '#FF914D',   // Hover, Akzente
-        gummyYellow: '#FFD93D',   // Highlights
-        gummyGreen: '#6BCB77',    // Erfolg
-        gummyBlue: '#4D96FF',     // Links, Icons
-        gummyPurple: '#9B59B6',   // Sekundär
-        candyWhite: '#FFF8F0',    // Hintergrund hell
-        nightBlue: '#1E2A38',     // Dunkles Theme
+        brandGreen: '#6bb536',    // Hauptfarbe Grün
+        brandBlue: '#2f4b96',     // Akzentfarbe Blau
+        deepBlack: '#000000',     // Schwarz
+        pureWhite: '#FFFFFF',     // Weiß
+        lightGray: '#F5F5F5',     // Heller Hintergrund
+        // Legacy-Namen für Kompatibilität (werden ersetzt)
+        gummyRed: '#6bb536',      // -> brandGreen
+        gummyOrange: '#2f4b96',   // -> brandBlue
+        gummyYellow: '#6bb536',   // -> brandGreen
+        gummyGreen: '#6bb536',    // -> brandGreen
+        gummyBlue: '#2f4b96',     // -> brandBlue
+        gummyPurple: '#2f4b96',   // -> brandBlue
+        candyWhite: '#FFFFFF',    // -> pureWhite
+        nightBlue: '#000000',     // -> deepBlack
       },
 
       // Custom Fonts - Jelly Design System
@@ -23,6 +29,7 @@ export default {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         heading: ['Poppins', 'system-ui', 'sans-serif'],
         serif: ['Merriweather', 'Georgia', 'serif'],
+        jost: ['Jost', 'system-ui', 'sans-serif'],
       },
 
       // Custom Spacing
@@ -42,7 +49,7 @@ export default {
       // Custom Box Shadow
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'glow': '0 0 15px rgba(14, 165, 233, 0.3)',
+        'glow': '0 0 15px rgba(107, 181, 54, 0.3)',
       },
 
       // Jelly Design System - Animationen
@@ -85,10 +92,10 @@ export default {
         },
         pulseGlow: {
           '0%, 100%': {
-            boxShadow: '0 0 20px rgba(255, 75, 92, 0.4), 0 0 40px rgba(255, 75, 92, 0.2)',
+            boxShadow: '0 0 20px rgba(107, 181, 54, 0.4), 0 0 40px rgba(107, 181, 54, 0.2)',
           },
           '50%': {
-            boxShadow: '0 0 30px rgba(255, 75, 92, 0.6), 0 0 60px rgba(255, 75, 92, 0.3)',
+            boxShadow: '0 0 30px rgba(107, 181, 54, 0.6), 0 0 60px rgba(107, 181, 54, 0.3)',
           },
         },
       },

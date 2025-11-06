@@ -70,8 +70,10 @@ const ContactForm = () => {
       newErrors.email = 'Bitte geben Sie eine gültige E-Mail ein';
     }
 
-    // Phone ist optional, aber wenn vorhanden, validieren
-    if (formData.phone.trim() && !/^[0-9+\-\s()]+$/.test(formData.phone)) {
+    // Phone ist erforderlich
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Telefonnummer ist erforderlich';
+    } else if (!/^[0-9+\-\s()]+$/.test(formData.phone)) {
       newErrors.phone = 'Bitte geben Sie eine gültige Telefonnummer ein';
     }
 
@@ -134,8 +136,8 @@ const ContactForm = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
             Lass uns sprechen
@@ -151,8 +153,8 @@ const ContactForm = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               {/* Name */}
@@ -201,13 +203,13 @@ const ContactForm = () => {
                 )}
               </div>
 
-              {/* Telefon (optional) */}
+              {/* Telefon */}
               <div>
                 <label
                   htmlFor="phone"
                   className="block text-sm font-medium text-nightBlue mb-2"
                 >
-                  Telefon (optional)
+                  Telefon <span className="text-gummyRed">*</span>
                 </label>
                 <input
                   type="tel"
@@ -314,7 +316,7 @@ const ContactForm = () => {
                   </>
                 ) : (
                   <>
-                    <span>Jetzt senden 🍬</span>
+                    <span>Jetzt senden</span>
                   </>
                 )}
               </motion.button>
@@ -330,8 +332,8 @@ const ContactForm = () => {
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
             {/* Info Karte */}
             <div className="card-glass space-y-8">

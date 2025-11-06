@@ -76,13 +76,12 @@ const Navigation = () => {
                 <img
                   src={bearLogo}
                   alt="Bearshop Logo"
-                  className="w-12 h-12 object-contain drop-shadow-[0_0_12px_rgba(255,150,50,0.6)] group-hover:drop-shadow-[0_0_18px_rgba(255,150,50,0.8)] transition-all duration-500"
+                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(107,181,54,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(107,181,54,1)] transition-all duration-500"
                 />
-
               </div>
               <div className="hidden sm:block text-center">
   <div
-    className={`font-heading font-bold text-3xl transition-all duration-500 ${
+    className={`font-jost font-bold text-3xl transition-all duration-500 ${
       isScrolled
         ? 'text-nightBlue drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]'
         : 'text-white drop-shadow-[0_0_10px_rgba(255,180,80,0.8)]'
@@ -93,8 +92,8 @@ const Navigation = () => {
   <div
     className={`font-serif italic text-sm mt-1 transition-all duration-500 ${
       isScrolled
-        ? 'text-nightBlue drop-shadow-[0_0_3px_rgba(255,255,255,0.2)]'
-        : 'text-white drop-shadow-[0_0_6px_rgba(255,180,80,0.6)]'
+        ? 'text-brandGreen drop-shadow-[0_0_6px_rgba(107,181,54,0.6)]'
+        : 'text-brandGreen drop-shadow-[0_0_10px_rgba(107,181,54,0.8)]'
     }`}
   >
     Deine&nbsp;Geschichte&nbsp;mit&nbsp;Still

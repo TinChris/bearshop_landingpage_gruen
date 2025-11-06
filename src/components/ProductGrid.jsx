@@ -29,10 +29,10 @@ const ProductGrid = () => {
         {/* Überschrift */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
             Unsere Produkte
@@ -52,11 +52,10 @@ const ProductGrid = () => {
               <motion.div
                 key={product.id}
                 className="card-glass flex flex-col min-h-[680px]"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{ duration: 0.8, delay: index * 0.08, ease: "easeOut" }}
               >
                 {/* Produkt-Bild / Placeholder */}
                 <div className="relative w-full h-[400px] rounded-2xl overflow-hidden mb-6 group">
@@ -78,14 +77,14 @@ const ProductGrid = () => {
                     // Gradient Placeholder mit Hover-Effekt
                     <>
                       <div
-                        className="w-full h-full bg-gradient-to-br from-white/40 to-white/10 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0"
+                        className="w-full h-full bg-gradient-to-br flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0"
                         style={{
-                          background: `linear-gradient(135deg, var(--${product.color}, #FF4B5C) 0%, var(--${product.color}, #FF4B5C) 100%)`,
-                          opacity: 0.3,
+                          background: `linear-gradient(135deg, #2f4b96 0%, #1a2f60 100%)`,
+                          opacity: 0.8,
                         }}
                       >
                         {IconComponent && (
-                          <IconComponent size={80} className="text-white/60" />
+                          <IconComponent size={80} className="text-brandGreen/80" />
                         )}
                       </div>
                       <img
@@ -100,8 +99,7 @@ const ProductGrid = () => {
                 {/* Icon + Produktname */}
                 <div className="flex items-center gap-4 mb-3">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
-                    style={{ backgroundColor: `var(--${product.color}, #FF4B5C)` }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 bg-brandGreen"
                   >
                     {IconComponent && (
                       <IconComponent size={24} className="text-white" />

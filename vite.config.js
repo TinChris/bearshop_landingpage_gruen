@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  // Base URL for GitHub Pages (change to '/' for root domain)
-  base: '/bearshop_landingpage/',
+  // Base URL - './' for relative paths (works offline and on any server)
+  base: './',
 
   // Development server configuration
   server: {

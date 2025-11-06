@@ -36,10 +36,10 @@ const ProcessTimeline = () => {
         {/* Überschrift */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
             In 3 Schritten zu deinem Produkt
@@ -57,8 +57,8 @@ const ProcessTimeline = () => {
               className="h-full bg-gradient-to-r from-gummyRed via-gummyYellow to-gummyGreen"
               initial={{ width: '0%' }}
               whileInView={{ width: '100%' }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: 'easeInOut' }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ duration: 1.2, ease: 'easeOut' }}
             />
           </div>
 
@@ -68,10 +68,10 @@ const ProcessTimeline = () => {
               <motion.div
                 key={index}
                 className="relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{ duration: 0.8, delay: index * 0.08, ease: "easeOut" }}
               >
                 {/* Card */}
                 <div className="card-glass text-center relative z-10">
@@ -106,8 +106,8 @@ const ProcessTimeline = () => {
                       className="w-1 h-12 bg-gradient-to-b from-gummyRed via-gummyYellow to-gummyGreen rounded-full"
                       initial={{ height: 0 }}
                       whileInView={{ height: 48 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
+                      viewport={{ once: false, amount: 0.4 }}
+                      transition={{ duration: 0.8, delay: index * 0.1 + 0.3, ease: "easeOut" }}
                     />
                   </div>
                 )}
@@ -119,10 +119,10 @@ const ProcessTimeline = () => {
         {/* CTA */}
         <motion.div
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
         >
           <a
             href="#contact"

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import bearLogo from '../assets/Bearshop-Baer-150x150.png';
 
 /**
  * Footer - 4-Spalten Footer
@@ -43,20 +44,24 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
           >
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-gummyRed to-gummyOrange rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-heading font-bold text-xl">B</span>
+              <div className="flex items-center justify-center">
+                <img
+                  src={bearLogo}
+                  alt="Bearshop Logo"
+                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(107,181,54,0.8)]"
+                />
               </div>
               <div>
-                <div className="font-heading font-bold text-xl text-candyWhite">
+                <div className="font-jost font-bold text-xl text-candyWhite">
                   Bearshop
                 </div>
               </div>
             </div>
-            <p className="font-serif italic text-sm text-gummyYellow mb-4">
+            <p className="font-serif italic text-sm text-brandGreen mb-4 drop-shadow-[0_0_6px_rgba(107,181,54,0.6)]">
               Deine Geschichte mit Still
             </p>
             <p className="font-sans text-sm text-candyWhite/70 leading-relaxed">
@@ -68,8 +73,8 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.0, delay: 0.15, ease: "easeOut" }}
           >
             <h4 className="font-heading font-semibold text-lg mb-4">Navigation</h4>
             <ul className="space-y-3">
@@ -90,8 +95,8 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.0, delay: 0.3, ease: "easeOut" }}
           >
             <h4 className="font-heading font-semibold text-lg mb-4">Rechtliches</h4>
             <ul className="space-y-3">
@@ -112,8 +117,8 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.0, delay: 0.45, ease: "easeOut" }}
           >
             <h4 className="font-heading font-semibold text-lg mb-4">Folge uns</h4>
             <div className="flex gap-4">
@@ -146,12 +151,12 @@ const Footer = () => {
           className="text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 1.0, delay: 0.6, ease: "easeOut" }}
         >
           <p className="font-sans text-sm text-candyWhite/50">
             © {currentYear} Bearshop. Alle Rechte vorbehalten. Made with{' '}
-            <span className="text-gummyRed">❤</span> in Austria
+            <span className="text-red-500">❤</span> in Austria
           </p>
         </motion.div>
       </div>

@@ -21,16 +21,16 @@ const PhilosophyBanner = () => {
           className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
           {/* Icon */}
           <motion.div
             className="flex justify-center mb-6"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gummyYellow to-gummyOrange flex items-center justify-center shadow-lg">
               <Sparkles size={32} className="text-white" />
@@ -42,8 +42,8 @@ const PhilosophyBanner = () => {
             className="text-xl md:text-2xl font-sans text-nightBlue leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           >
             Wir kombinieren Design, Funktion und Qualität, um Textilien zu schaffen,
             die nicht nur gut aussehen, sondern perfekt zu deiner Marke und deinem

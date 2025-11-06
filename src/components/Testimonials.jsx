@@ -43,8 +43,8 @@ const Testimonials = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
             Das sagen unsere Kunden
@@ -65,7 +65,7 @@ const Testimonials = () => {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
               >
                 <div className="card-glass h-full flex flex-col justify-between">
                   {/* Rating */}

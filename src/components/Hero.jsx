@@ -46,11 +46,34 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-soft"
     >
+      {/* Video Background - Nur auf Mobile */}
+      <div className="absolute inset-0 lg:hidden">
+        {!videoEnded ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={HeroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src={FallbackImage}
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        )}
+        {/* Dark Overlay für bessere Lesbarkeit */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+      </div>
+
       {/* Floating Bearshop Bären Background - Nur auf Desktop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
-        {/* Bär 1 - Rot (Original) */}
+        {/* Bär 1 - Neon Grün */}
         <motion.div
-          className="absolute top-40 left-40 opacity-15"
+          className="absolute top-40 left-40 opacity-30"
           animate={{
             y: [0, -30, 0],
             x: [0, 20, 0],
@@ -62,12 +85,20 @@ const Hero = () => {
             ease: 'easeInOut',
           }}
         >
-          <img src={BearLogoRot} alt="" className="w-40 h-40 drop-shadow-2xl" />
+          <img
+            src={BearLogoRot}
+            alt=""
+            className="w-40 h-40"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
+          />
         </motion.div>
 
-        {/* Bär 2 - Gelb (mit Filter) */}
+        {/* Bär 2 - Neon Grün */}
         <motion.div
-          className="absolute top-40 right-20 opacity-15"
+          className="absolute top-40 right-20 opacity-30"
           animate={{
             y: [0, 40, 0],
             x: [0, -30, 0],
@@ -83,14 +114,17 @@ const Hero = () => {
           <img
             src={BearLogoBlau}
             alt=""
-            className="w-32 h-32 drop-shadow-2xl"
-            style={{ filter: 'hue-rotate(30deg) saturate(1.5)' }}
+            className="w-32 h-32"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
           />
         </motion.div>
 
-        {/* Bär 3 - Grün */}
+        {/* Bär 3 - Neon Grün */}
         <motion.div
-          className="absolute bottom-32 left-1/4 opacity-15"
+          className="absolute bottom-32 left-1/4 opacity-30"
           animate={{
             y: [0, -35, 0],
             x: [0, 25, 0],
@@ -106,14 +140,17 @@ const Hero = () => {
           <img
             src={BearLogoRot}
             alt=""
-            className="w-36 h-36 drop-shadow-2xl"
-            style={{ filter: 'hue-rotate(90deg) saturate(1.2)' }}
+            className="w-36 h-36"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
           />
         </motion.div>
 
-        {/* Bär 4 - Blau (Original) */}
+        {/* Bär 4 - Neon Grün */}
         <motion.div
-          className="absolute bottom-20 right-1/3 opacity-15"
+          className="absolute bottom-20 right-1/3 opacity-30"
           animate={{
             y: [0, 25, 0],
             x: [0, -20, 0],
@@ -126,12 +163,20 @@ const Hero = () => {
             delay: 0.5,
           }}
         >
-          <img src={BearLogoBlau} alt="" className="w-28 h-28 drop-shadow-2xl" />
+          <img
+            src={BearLogoBlau}
+            alt=""
+            className="w-28 h-28"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
+          />
         </motion.div>
 
-        {/* Bär 5 - Lila */}
+        {/* Bär 5 - Neon Grün */}
         <motion.div
-          className="absolute top-1/3 right-10 opacity-15"
+          className="absolute top-1/3 right-10 opacity-30"
           animate={{
             y: [0, -40, 0],
             x: [0, 30, 0],
@@ -147,14 +192,17 @@ const Hero = () => {
           <img
             src={BearLogoRot}
             alt=""
-            className="w-34 h-34 drop-shadow-2xl"
-            style={{ filter: 'hue-rotate(270deg) saturate(1.3)' }}
+            className="w-34 h-34"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
           />
         </motion.div>
 
-        {/* Bär 6 - Orange */}
+        {/* Bär 6 - Neon Grün */}
         <motion.div
-          className="absolute top-1/2 left-10 opacity-12"
+          className="absolute top-1/2 left-10 opacity-30"
           animate={{
             y: [0, 30, 0],
             x: [0, -15, 0],
@@ -170,14 +218,17 @@ const Hero = () => {
           <img
             src={BearLogoBlau}
             alt=""
-            className="w-30 h-30 drop-shadow-2xl"
-            style={{ filter: 'hue-rotate(15deg) saturate(0.3)' }}
+            className="w-30 h-30"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
           />
         </motion.div>
 
-        {/* Bär 7 - Zusätzlicher kleiner Bär */}
+        {/* Bär 7 - Neon Grün */}
         <motion.div
-          className="absolute top-2/3 right-1/4 opacity-18"
+          className="absolute top-2/3 right-1/4 opacity-30"
           animate={{
             y: [0, -25, 0],
             x: [0, 15, 0],
@@ -193,37 +244,103 @@ const Hero = () => {
           <img
             src={BearLogoRot}
             alt=""
-            className="w-24 h-24 drop-shadow-2xl"
-            style={{ filter: 'hue-rotate(180deg) saturate(1.4)' }}
+            className="w-24 h-24"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(450%) hue-rotate(55deg) brightness(95%) contrast(85%)',
+              dropShadow: '0 0 20px rgba(107, 181, 54, 0.8)'
+            }}
           />
         </motion.div>
       </div>
 
       {/* Hero Content - Responsive Layout */}
       <div className="container-custom relative z-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center py-20">
-
-          {/* Titel - Order 1 auf Mobile */}
+        {/* Mobile Layout - Alles zentriert über Video */}
+        <div className="flex flex-col items-center justify-center text-center space-y-6 py-20 lg:hidden min-h-[80vh]">
+          {/* Titel */}
           <motion.div
-            className="text-center lg:text-left w-full lg:col-span-1 order-1"
             initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <h1 className="font-heading font-bold text-white drop-shadow-2xl">
+            <h1 className="font-heading font-bold text-white drop-shadow-2xl text-center px-4">
               Dein Partner für <br />
-              <span className="text-gummyYellow">Bekleidung & Textildruck</span>
+              Bekleidung & Textildruck
             </h1>
           </motion.div>
 
-          {/* Video - Order 2 auf Mobile, bleibt rechts auf Desktop */}
+          {/* Subline */}
           <motion.div
-            className="flex justify-center lg:justify-end w-full lg:col-span-1 order-2 lg:row-span-2"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-sm lg:max-w-md">
+            <p className="text-lg text-white/95 font-sans leading-relaxed drop-shadow-lg px-6">
+              Maßgeschneiderte Lösungen für jeden Anspruch – vom Schulalltag bis zum Businessauftritt.
+            </p>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+          >
+            <motion.a
+              href="#contact"
+              className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-[0_0_30px_rgba(107,181,54,0.6)] animate-pulse-glow"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Jetzt anfragen
+            </motion.a>
+          </motion.div>
+
+          {/* Trust Badge */}
+          <motion.div
+            className="text-white/90 pt-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+          >
+            <p className="text-sm font-sans mb-1">Vertrauen schenken uns bereits:</p>
+            <p className="text-lg font-heading font-semibold">
+              Über 200 zufriedene Kunden österreichweit
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Desktop Layout - Grid mit Video rechts */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center py-20">
+
+          {/* Titel */}
+          <motion.div
+            className="text-center w-full lg:col-span-1"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <h1 className="font-heading font-bold text-white drop-shadow-2xl text-center">
+              Dein Partner für <br />
+              Bekleidung & Textildruck
+            </h1>
+          </motion.div>
+
+          {/* Video - rechts auf Desktop */}
+          <motion.div
+            className="flex justify-center lg:justify-end w-full lg:col-span-1 lg:row-span-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+          >
+            <div className="relative w-full max-w-md">
               {/* Video Container - 9:16 Aspect Ratio (Portrait/Stehend) */}
               <div
                 className="relative rounded-3xl overflow-hidden shadow-2xl"
@@ -271,35 +388,28 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Rest vom Text Content - Order 3 auf Mobile */}
+          {/* Rest vom Text Content */}
           <motion.div
-            className="text-center lg:text-left space-y-8 w-full lg:col-span-1 order-3"
+            className="text-center space-y-8 w-full lg:col-span-1"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
           >
             {/* Subline */}
-            <p className="text-xl md:text-2xl text-white/95 font-sans leading-relaxed drop-shadow-lg">
+            <p className="text-xl md:text-2xl text-white/95 font-sans leading-relaxed drop-shadow-lg text-center">
               Maßgeschneiderte Lösungen für jeden Anspruch – vom Schulalltag bis zum Businessauftritt.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-6 pt-8">
+            {/* CTA Button */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
               <motion.a
                 href="#contact"
-                className="btn-jelly bg-white text-gummyRed hover:bg-candyWhite hover:scale-110 shadow-2xl"
+                className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-[0_0_30px_rgba(107,181,54,0.6)] animate-pulse-glow"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Jetzt anfragen
-              </motion.a>
-              <motion.a
-                href="#testimonials"
-                className="btn-jelly btn-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Referenzen ansehen
               </motion.a>
             </div>
 

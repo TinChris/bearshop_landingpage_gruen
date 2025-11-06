@@ -44,10 +44,10 @@ const UnserAngebot = () => {
         {/* Überschrift */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
             Unser Angebot
@@ -57,23 +57,21 @@ const UnserAngebot = () => {
           </p>
         </motion.div>
 
-        {/* 5-Spalten Grid (Desktop) / Scroll (Mobile) */}
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 md:overflow-visible">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 min-w-max md:min-w-0">
+        {/* 5-Spalten Grid (Desktop) */}
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {categories.map((category, index) => (
               <motion.div
                 key={index}
-                className="card-glass p-6 flex flex-col items-center text-center min-w-[200px] md:min-w-0"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.05 }}
+                className="card-glass p-6 flex flex-col items-center text-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{ duration: 0.8, delay: index * 0.08, ease: "easeOut" }}
               >
                 {/* Icon */}
                 <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg mb-4"
-                  style={{ backgroundColor: `var(--${category.color}, #FF4B5C)` }}
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg mb-4 bg-brandGreen"
                 >
                   <category.icon size={40} className="text-white" />
                 </div>
@@ -92,8 +90,8 @@ const UnserAngebot = () => {
           className="mt-16 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           <p className="text-lg font-sans text-nightBlue/80 max-w-3xl mx-auto leading-relaxed">
             Veredelt mit modernstem Textildruck und Stickverfahren wird jedes
