@@ -24,12 +24,12 @@ export default {
         nightBlue: '#000000',     // -> deepBlack
       },
 
-      // Custom Fonts - Jelly Design System
+      // Custom Fonts - Bearshop
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        heading: ['Poppins', 'system-ui', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'serif'],
-        jost: ['Jost', 'system-ui', 'sans-serif'],
+        sans: ['Gothic A1', 'Century Gothic', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Gothic A1', 'Century Gothic', 'system-ui', 'sans-serif'],
+        bauhaus: ['Josefin Sans', 'Impact', 'system-ui', 'sans-serif'], // Bauhaus 93 alternative
+        serif: ['Gothic A1', 'Georgia', 'serif'],
       },
 
       // Custom Spacing

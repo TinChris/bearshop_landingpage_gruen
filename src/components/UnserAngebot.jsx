@@ -46,7 +46,7 @@ const UnserAngebot = () => {
           className="text-center mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
@@ -63,11 +63,15 @@ const UnserAngebot = () => {
             {categories.map((category, index) => (
               <motion.div
                 key={index}
-                className="card-glass p-6 flex flex-col items-center text-center"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: false, amount: 0.4 }}
-                transition={{ duration: 0.8, delay: index * 0.08, ease: "easeOut" }}
+                className="bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl shadow-xl p-6 hover:shadow-2xl hover:transform hover:-translate-y-2 transition-transform duration-500 flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
               >
                 {/* Icon */}
                 <div

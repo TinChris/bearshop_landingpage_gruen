@@ -44,8 +44,8 @@ function App() {
         {/* Prozess Timeline */}
         <ProcessTimeline />
 
-        {/* Testimonials Carousel */}
-        <Testimonials />
+        {/* Testimonials Carousel - Deactivated for later use */}
+        {/* <Testimonials /> */}
 
         {/* CTA Banner */}
         <CTABanner />

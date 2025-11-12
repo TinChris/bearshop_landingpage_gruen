@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import { products } from '../data/products';
-import TshirtImage from '../assets/tshirt_skyblue.jpg';
-import HoodieRotImage from '../assets/hoodie_ziegelrot.jpg';
-import HoodieBlauImage from '../assets/hoodie_zip_blau.jpg';
+import TshirtImage from '../assets/T-shirt_900x1200px.png';
+import HoodieImage from '../assets/Hoodie_mainpic_900x1200px.png';
+import WerbemittelImage from '../assets/Werbemittel_900 x1200 px.png';
+import BusinessToolsImage from '../assets/Business_tools_900 x1200 px.png';
+import VerpackungImage from '../assets/Verpackungl_900 x1200 px.png';
+import PlaneImage from '../assets/Plane_900 x1200 px.png';
 import HoverImage from '../assets/DeinLogo_DeinStil.jpg';
 
 /**
@@ -19,8 +22,11 @@ const ProductGrid = () => {
   // Mapping von Produkt-IDs zu Bildern
   const productImages = {
     1: TshirtImage,           // T-Shirts
-    2: HoodieRotImage,        // Hoodies & Pullover
-    // 3-6 verwenden Gradient-Placeholder
+    2: HoodieImage,           // Hoodies & Pullover
+    3: WerbemittelImage,      // Werbung & Events
+    4: BusinessToolsImage,    // Geschäftsausstattung
+    5: VerpackungImage,       // Verpackung & Etiketten
+    6: PlaneImage,            // Außenwerbung
   };
 
   return (
@@ -31,7 +37,7 @@ const ProductGrid = () => {
           className="text-center mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-4">
@@ -51,10 +57,10 @@ const ProductGrid = () => {
             return (
               <motion.div
                 key={product.id}
-                className="card-glass flex flex-col min-h-[680px]"
+                className="bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl shadow-xl p-8 hover:shadow-2xl hover:transform hover:-translate-y-2 transition-transform duration-500 flex flex-col min-h-[680px]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.8, delay: index * 0.08, ease: "easeOut" }}
               >
                 {/* Produkt-Bild / Placeholder */}

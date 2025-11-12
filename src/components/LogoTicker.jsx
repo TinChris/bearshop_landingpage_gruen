@@ -25,10 +25,10 @@ const LogoTicker = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading font-semibold text-nightBlue mb-3">
-            Vertrauen uns bereits
+            Uns vertrauen bereits
           </h2>
           <p className="text-lg text-nightBlue/70 font-sans">
-            Über 200 zufriedene Kunden österreichweit
+            über 3500 zufriedene Kunden österreichweit
           </p>
         </motion.div>
 

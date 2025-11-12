@@ -47,23 +47,23 @@ const Footer = () => {
             viewport={{ once: false, amount: 0.4 }}
             transition={{ duration: 1.0, ease: "easeOut" }}
           >
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="flex items-center justify-center">
+            <div className="flex items-start space-x-3 mb-2">
+              <div className="flex items-center justify-center flex-shrink-0">
                 <img
                   src={bearLogo}
                   alt="Bearshop Logo"
-                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(107,181,54,0.8)]"
+                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)]"
                 />
               </div>
-              <div>
-                <div className="font-jost font-bold text-xl text-candyWhite">
-                  Bearshop
+              <div className="flex flex-col">
+                <div className="font-bauhaus font-bold text-3xl text-candyWhite leading-none">
+                  Bearshop.at
                 </div>
+                <p className="font-bauhaus italic text-sm text-[#DAA520] mt-1 drop-shadow-[0_0_6px_rgba(218,165,32,0.6)]">
+                  Deine Geschichte mit Stil
+                </p>
               </div>
             </div>
-            <p className="font-serif italic text-sm text-brandGreen mb-4 drop-shadow-[0_0_6px_rgba(107,181,54,0.6)]">
-              Deine Geschichte mit Still
-            </p>
             <p className="font-sans text-sm text-candyWhite/70 leading-relaxed">
               Hochwertiger Textildruck & Merchandise für Schulen, Vereine und Unternehmen.
             </p>

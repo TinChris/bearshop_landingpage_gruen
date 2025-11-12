@@ -223,7 +223,7 @@ const CTABanner = () => {
           >
             <motion.a
               href="#contact"
-              className="inline-flex btn-jelly bg-white text-gummyRed hover:bg-candyWhite text-lg px-12 py-5 shadow-2xl animate-pulse-glow"
+              className="inline-flex btn-jelly bg-[#DAA520] text-white hover:bg-[#DAA520]/90 text-lg px-12 py-5 shadow-[0_0_30px_rgba(218,165,32,0.6)] animate-pulse-glow"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

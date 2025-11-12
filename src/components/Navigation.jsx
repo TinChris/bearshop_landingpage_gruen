@@ -68,37 +68,37 @@ const Navigation = () => {
             <motion.a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="flex items-center space-x-2 group"
+              className="flex items-center space-x-3 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+              <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-105 flex-shrink-0">
                 <img
                   src={bearLogo}
                   alt="Bearshop Logo"
-                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(107,181,54,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(107,181,54,1)] transition-all duration-500"
+                  className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,1)] transition-all duration-500"
                 />
               </div>
-              <div className="hidden sm:block text-center">
-  <div
-    className={`font-jost font-bold text-3xl transition-all duration-500 ${
-      isScrolled
-        ? 'text-nightBlue drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]'
-        : 'text-white drop-shadow-[0_0_10px_rgba(255,180,80,0.8)]'
-    }`}
-  >
-    Bearshop
-  </div>
-  <div
-    className={`font-serif italic text-sm mt-1 transition-all duration-500 ${
-      isScrolled
-        ? 'text-brandGreen drop-shadow-[0_0_6px_rgba(107,181,54,0.6)]'
-        : 'text-brandGreen drop-shadow-[0_0_10px_rgba(107,181,54,0.8)]'
-    }`}
-  >
-    Deine&nbsp;Geschichte&nbsp;mit&nbsp;Still
-  </div>
-</div>
+              <div className="hidden sm:flex sm:flex-col">
+                <div
+                  className={`font-bauhaus font-bold text-3xl leading-none transition-all duration-500 ${
+                    isScrolled
+                      ? 'text-nightBlue drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]'
+                      : 'text-white drop-shadow-[0_0_10px_rgba(255,180,80,0.8)]'
+                  }`}
+                >
+                  Bearshop.at
+                </div>
+                <p
+                  className={`font-bauhaus italic text-sm mt-1 transition-all duration-500 ${
+                    isScrolled
+                      ? 'text-[#DAA520] drop-shadow-[0_0_6px_rgba(218,165,32,0.6)]'
+                      : 'text-[#DAA520] drop-shadow-[0_0_10px_rgba(218,165,32,0.8)]'
+                  }`}
+                >
+                  Deine Geschichte mit Stil
+                </p>
+              </div>
 
             </motion.a>
 

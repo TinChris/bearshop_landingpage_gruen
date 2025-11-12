@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import BearLogoBlau from '../assets/bearshop_logo_blau.svg';
 import BearLogoRot from '../assets/bearshop_logo_rot.svg';
-import HeroVideo from '../assets/danceInHoodie.mp4';
+import HeroVideo from '../assets/danceInHoodie_v3.mp4';
 import FallbackImage from '../assets/DeinLogo_DeinStil.jpg';
 
 /**
@@ -19,8 +19,6 @@ import FallbackImage from '../assets/DeinLogo_DeinStil.jpg';
  * - CTA Buttons
  */
 const Hero = () => {
-  const [videoEnded, setVideoEnded] = useState(false);
-
   // Scroll Handler für Scroll Indicator
   const handleScrollDown = () => {
     const element = document.querySelector('#products');
@@ -36,11 +34,6 @@ const Hero = () => {
     }
   };
 
-  // Video Ende Handler
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-  };
-
   return (
     <section
       id="home"
@@ -48,23 +41,15 @@ const Hero = () => {
     >
       {/* Video Background - Nur auf Mobile */}
       <div className="absolute inset-0 lg:hidden">
-        {!videoEnded ? (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={HeroVideo} type="video/mp4" />
-          </video>
-        ) : (
-          <img
-            src={FallbackImage}
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={HeroVideo} type="video/mp4" />
+        </video>
         {/* Dark Overlay für bessere Lesbarkeit */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
       </div>
@@ -266,7 +251,7 @@ const Hero = () => {
           >
             <h1 className="font-heading font-bold text-white drop-shadow-2xl text-center px-4">
               Dein Partner für <br />
-              Bekleidung & Textildruck
+              Bekleidung, Textildruck und vieles mehr
             </h1>
           </motion.div>
 
@@ -292,7 +277,7 @@ const Hero = () => {
           >
             <motion.a
               href="#contact"
-              className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-[0_0_30px_rgba(107,181,54,0.6)] animate-pulse-glow"
+              className="btn-jelly bg-[#DAA520] text-white hover:bg-[#DAA520]/90 shadow-[0_0_30px_rgba(218,165,32,0.6)] animate-pulse-glow"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -328,7 +313,7 @@ const Hero = () => {
           >
             <h1 className="font-heading font-bold text-white drop-shadow-2xl text-center">
               Dein Partner für <br />
-              Bekleidung & Textildruck
+              Bekleidung, Textildruck und vieles mehr
             </h1>
           </motion.div>
 
@@ -346,26 +331,17 @@ const Hero = () => {
                 className="relative rounded-3xl overflow-hidden shadow-2xl"
                 style={{ aspectRatio: '9/16' }}
               >
-                {!videoEnded ? (
-                  /* Video Element */
-                  <video
-                    autoPlay
-                    muted
-                    playsInline
-                    onEnded={handleVideoEnd}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  >
-                    <source src={HeroVideo} type="video/mp4" />
-                    Dein Browser unterstützt das Video-Format nicht.
-                  </video>
-                ) : (
-                  /* Fallback Bild nach Video Ende */
-                  <img
-                    src={FallbackImage}
-                    alt="Dein Logo, Dein Stil"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                )}
+                {/* Video Element */}
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src={HeroVideo} type="video/mp4" />
+                  Dein Browser unterstützt das Video-Format nicht.
+                </video>
 
                 {/* Glass Border Effect */}
                 <div className="absolute inset-0 rounded-3xl border-4 border-white/20 pointer-events-none"></div>
@@ -383,7 +359,7 @@ const Hero = () => {
                   ease: 'easeInOut',
                 }}
               >
-                <span className="text-sm">200+ Kunden</span>
+                <span className="text-sm">+3500 Kunden</span>
               </motion.div>
             </div>
           </motion.div>
@@ -405,7 +381,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
               <motion.a
                 href="#contact"
-                className="btn-jelly bg-brandGreen text-white hover:bg-brandGreen/90 shadow-[0_0_30px_rgba(107,181,54,0.6)] animate-pulse-glow"
+                className="btn-jelly bg-[#DAA520] text-white hover:bg-[#DAA520]/90 shadow-[0_0_30px_rgba(218,165,32,0.6)] animate-pulse-glow"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
